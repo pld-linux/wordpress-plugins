@@ -2,7 +2,7 @@ Summary:	Plugins for the WordPress personal publishing system
 Summary(pl):	Wtyczki dla osobistego systemu publikacji WordPress
 Name:		wordpress-plugins
 Version:	1.5
-Release:	2
+Release:	3
 License:	GPL or MIT or Free
 Group:		Applications/Publishing
 Source0:	http://ink.bur.st/wp-content/downloads/kca.phps
@@ -20,7 +20,7 @@ Obsoletes:	wordpress-plugin
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		wordpressdir	/home/services/httpd/html/wordpress
+%define		wordpressdir	%{_datadir}/wordpress
 %define		pluginssubdir	wp-content/plugins
 %define		pluginsdir	%{wordpressdir}/%{pluginssubdir}
 
