@@ -5,21 +5,21 @@ Version:	1.5
 Release:	2
 License:	GPL
 Group:		Applications/Publishing
-URL:		http://codex.wordpress.org/Plugins
 Source0:	http://ink.bur.st/wp-content/downloads/kca.phps
 # Source0-md5:	a6aecdf5eeee244f1537825921773625
 Source1:	http://pericat.ca/downloads/previewexcerpt.tar.gz
 # Source1-md5:	41e6c2f87dec2225ac33a4eef74fab39
+URL:		http://codex.wordpress.org/Plugins
+BuildRequires:	dos2unix
 Requires:	wordpress = %{version}
 Provides:	wordpress-plugin-khanhs_content_adder
 Provides:	wordpress-plugin-previewexcerpt
-BuildRequires:	dos2unix
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	wordpressdir	/home/services/httpd/html/wordpress
-%define	pluginssubdir	wp-content/plugins
-%define	pluginsdir	%{wordpressdir}/%{pluginssubdir}
+%define		wordpressdir	/home/services/httpd/html/wordpress
+%define		pluginssubdir	wp-content/plugins
+%define		pluginsdir	%{wordpressdir}/%{pluginssubdir}
 
 %description
 WordPress is a state-of-the-art semantic personal publishing platform
@@ -37,7 +37,8 @@ u¿yteczno¶æ.
 
 Ten pakiet dostarcza wtyczki rozszerzaj±ce funkcjonalno¶æ WordPress.
 Uwaga: ten pakiet zawiera w sobie wiele wtyczek, byæ mo¿e takich,
-których nie potrzebujesz i wolisz instalowaæ je z osobna.
+które nie s± akurat potrzebne - w takim wypadku mo¿na instalowaæ
+wtyczki osobno.
 
 %package -n wordpress-plugin-khanhs_content_adder
 Summary:	Content Adder plugin for WordPress
@@ -53,10 +54,10 @@ attribute defined. Configuration is easy: configure the plugin file
 with the content you want, activate the plugin and you're done.
 
 %description -n wordpress-plugin-khanhs_content_adder -l pl
-Przy pomocy tej wtyczki mo¿esz dodawaæ HTML czy JavaScript wszêdzie
+Przy pomocy tej wtyczki mo¿na dodawaæ HTML czy JavaScript wszêdzie
 tam, gdzie zdefiniowany jest atrybut ID. Konfiguracja jest prosta:
-skonfiguruj plik wtyczki wzglêdem posiadanej zawarto¶ci, uaktywnik j±
-i u¿ywaj.
+wystarczy skonfigurowaæ plik wtyczki wzglêdem posiadanej tre¶ci,
+uaktywniæ j± i u¿ywaæ.
 
 %package -n wordpress-plugin-excerpt_preview
 Summary:	Excerpt Preview plugin for WordPress
@@ -80,16 +81,14 @@ g³ównie dla fotoblogów, które u¿ywaj± pola podgl±du, aby przechowywaæ
 miniaturki.
 
 %prep
-rm -rf %{name}-%{version}
-install -d %{name}-%{version}
-cd %{name}-%{version}
+%setup -q -c -T
 cp %{SOURCE0} .
 tar xvzf %{SOURCE1}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{wordpressdir} $RPM_BUILD_ROOT%{pluginsdir}
-cd %{name}-%{version}
+
 for i in *.phps
 do
     mv -f $i $(basename $i .phps).php
