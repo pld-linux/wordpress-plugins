@@ -162,26 +162,26 @@ cp -R * $RPM_BUILD_ROOT%{pluginsdir}
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644,root,http,755)
+%defattr(640,root,http,750)
 %dir %{pluginsdir}
 %verify(not md5 mtime size) %{pluginsdir}/*
 
 %files -n wordpress-plugin-khanhs_content_adder
-%defattr(644,root,http,755)
+%defattr(644,root,http,750)
 %dir %{pluginsdir}
 %verify(not md5 mtime size) %{pluginsdir}/kca.php
 
 %files -n wordpress-plugin-excerpt_preview
-%defattr(644,root,http,755)
+%defattr(644,root,http,750)
 %dir %{pluginsdir}
 %verify(not md5 mtime size) %{pluginsdir}/previewexcerpt.php
 
 %files -n wordpress-plugin-next_to_last
-%defattr(644,root,http,755)
+%defattr(644,root,http,750)
 %dir %{pluginsdir}
 %verify(not md5 mtime size) %{pluginsdir}/next-to-last.php
 
 %files -n wordpress-plugin-paged_comment_editing
-%defattr(644,root,http,755)
+%defattr(644,root,http,750)
 %dir %{pluginsdir}
 %verify(not md5 mtime size) %{pluginsdir}/edit-comments-full.php
