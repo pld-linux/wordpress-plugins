@@ -1,5 +1,5 @@
 Summary:	Plugins for the WordPress personal publishing system
-Summary(pl):	Wtyczki dla osobistego systemu publikacji WordPress
+Summary(pl.UTF-8):   Wtyczki dla osobistego systemu publikacji WordPress
 Name:		wordpress-plugins
 Version:	1.5
 Release:	3
@@ -33,19 +33,19 @@ functionality. Be ware: this package includes many plugins, which you
 may not want to install, and willing to use specific packages
 separately instead.
 
-%description -l pl
-WordPress jest technologicznie dopracowan±, semantyczn±, osobist±
-platform± do publikacji k³ad±c± nacisk na standardy WWW oraz
-u¿yteczno¶æ.
+%description -l pl.UTF-8
+WordPress jest technologicznie dopracowanÄ…, semantycznÄ…, osobistÄ…
+platformÄ… do publikacji kÅ‚adÄ…cÄ… nacisk na standardy WWW oraz
+uÅ¼ytecznoÅ›Ä‡.
 
-Ten pakiet dostarcza wtyczki rozszerzaj±ce funkcjonalno¶æ WordPress.
-Uwaga: ten pakiet zawiera w sobie wiele wtyczek, byæ mo¿e takich,
-które nie s± akurat potrzebne - w takim wypadku mo¿na instalowaæ
+Ten pakiet dostarcza wtyczki rozszerzajÄ…ce funkcjonalnoÅ›Ä‡ WordPress.
+Uwaga: ten pakiet zawiera w sobie wiele wtyczek, byÄ‡ moÅ¼e takich,
+ktÃ³re nie sÄ… akurat potrzebne - w takim wypadku moÅ¼na instalowaÄ‡
 wtyczki osobno.
 
 %package -n wordpress-plugin-khanhs_content_adder
 Summary:	Content Adder plugin for WordPress
-Summary(pl):	Wtyczka Content Adder dla WordPress
+Summary(pl.UTF-8):   Wtyczka Content Adder dla WordPress
 License:	MIT
 Group:		Applications/Publishing
 URL:		http://www.thoughtmechanics.com/
@@ -58,15 +58,15 @@ With KCA you can add HTML or JavaScript anywhere there's an ID
 attribute defined. Configuration is easy: configure the plugin file
 with the content you want, activate the plugin and you're done.
 
-%description -n wordpress-plugin-khanhs_content_adder -l pl
-Przy pomocy tej wtyczki mo¿na dodawaæ HTML czy JavaScript wszêdzie
+%description -n wordpress-plugin-khanhs_content_adder -l pl.UTF-8
+Przy pomocy tej wtyczki moÅ¼na dodawaÄ‡ HTML czy JavaScript wszÄ™dzie
 tam, gdzie zdefiniowany jest atrybut ID. Konfiguracja jest prosta:
-wystarczy skonfigurowaæ plik wtyczki wzglêdem posiadanej tre¶ci,
-uaktywniæ j± i u¿ywaæ.
+wystarczy skonfigurowaÄ‡ plik wtyczki wzglÄ™dem posiadanej treÅ›ci,
+uaktywniÄ‡ jÄ… i uÅ¼ywaÄ‡.
 
 %package -n wordpress-plugin-excerpt_preview
 Summary:	Excerpt Preview plugin for WordPress
-Summary(pl):	Wtyczka Excerpt Preview dla WordPress
+Summary(pl.UTF-8):   Wtyczka Excerpt Preview dla WordPress
 License:	Free
 Group:		Applications/Publishing
 URL:		http://pericat.ca/unlock/
@@ -80,16 +80,16 @@ content following a 'save' in the admin panel's Write/Edit page.
 Mostly useful for photologs that use the excerpt field to store
 thumbnails.
 
-%description -n wordpress-plugin-excerpt_preview -l pl
-Ta wtyczka pozwala u¿ywaæ podgl±du fragment wpisu tu¿ przed miejscem
-gdzie jego zawarto¶æ poprzedza funkcjê 'zapisz' na stronie
+%description -n wordpress-plugin-excerpt_preview -l pl.UTF-8
+Ta wtyczka pozwala uÅ¼ywaÄ‡ podglÄ…du fragment wpisu tuÅ¼ przed miejscem
+gdzie jego zawartoÅ›Ä‡ poprzedza funkcjÄ™ 'zapisz' na stronie
 Tworzenie/Edycja panelu administracyjnego. Wtyczka jest przydatna
-g³ównie dla fotoblogów, które u¿ywaj± pola podgl±du, aby przechowywaæ
+gÅ‚Ã³wnie dla fotoblogÃ³w, ktÃ³re uÅ¼ywajÄ… pola podglÄ…du, aby przechowywaÄ‡
 miniaturki.
 
 %package -n wordpress-plugin-next_to_last
 Summary:	Next-to-last plugin for WordPress
-Summary(pl):	Wtyczka nastêpny-to-ostatniego dla WordPress
+Summary(pl.UTF-8):   Wtyczka nastÄ™pny-to-ostatniego dla WordPress
 License:	GPL
 Group:		Applications/Publishing
 URL:		http://thunkgeek.com/wordpress-plugins.php
@@ -102,15 +102,15 @@ This plugin places "<< last post" and "next post >>" links at the top
 and bottom of the Edit page in Wordpress to allow the user to easily
 get back and forth between their posts. This plugin uses JavaScript.
 
-%description -n wordpress-plugin-next_to_last -l pl
-Ta wtyczka umieszcza odno¶niki "<< last post" oraz "next post >>" na
-górze i na dole strony Edycji i pozwala w ten sposób u¿ytkownikowi w
-³atwy sposób przechodziæ do nastêpnej b±d¼ poprzedniej strony z
-wpisem. Wtyczka ta u¿ywa JavaScript.
+%description -n wordpress-plugin-next_to_last -l pl.UTF-8
+Ta wtyczka umieszcza odnoÅ›niki "<< last post" oraz "next post >>" na
+gÃ³rze i na dole strony Edycji i pozwala w ten sposÃ³b uÅ¼ytkownikowi w
+Å‚atwy sposÃ³b przechodziÄ‡ do nastÄ™pnej bÄ…dÅº poprzedniej strony z
+wpisem. Wtyczka ta uÅ¼ywa JavaScript.
 
 %package -n wordpress-plugin-paged_comment_editing
 Summary:	Paged Comment Editing plugin for WordPress
-Summary(pl):	Wtyczka Stronicowanej Edycji Komentarzy dla WordPress
+Summary(pl.UTF-8):   Wtyczka Stronicowanej Edycji Komentarzy dla WordPress
 License:	GPL
 Group:		Applications/Publishing
 URL:		http://www.coldforged.org/paged-comment-editing-plugin/
@@ -128,16 +128,16 @@ the following capabilities:
 
 - viewing invisible comments (e.g. marked as invisible by filters)
 
-%description -n wordpress-plugin-paged_comment_editing -l pl
-Ta wtyczka przechwytuje zarz±dzanie interfejsem magazynuj±cym
-edytowane komentarze w celu rozszerzenia go o nastêpuj±ce mo¿liwo¶ci:
+%description -n wordpress-plugin-paged_comment_editing -l pl.UTF-8
+Ta wtyczka przechwytuje zarzÄ…dzanie interfejsem magazynujÄ…cym
+edytowane komentarze w celu rozszerzenia go o nastÄ™pujÄ…ce moÅ¼liwoÅ›ci:
 
 - przechodzenie poprzez strony komentarzy w interfejsie
-  administracyjnym komentarzy, w³±czaj±c w to ustawianie ¿±danej liczby
-  jednocze¶nie wy¶wietlanych na stronie wpisów, czy stronicowanie
+  administracyjnym komentarzy, wÅ‚Ä…czajÄ…c w to ustawianie Å¼Ä…danej liczby
+  jednoczeÅ›nie wyÅ›wietlanych na stronie wpisÃ³w, czy stronicowanie
   wyszukiwania w komentarzach
 
-- ogl±danie niewidocznych komentarzy (np. zaznaczonych jako
+- oglÄ…danie niewidocznych komentarzy (np. zaznaczonych jako
   niewidoczne przez filtry)
 
 %prep
