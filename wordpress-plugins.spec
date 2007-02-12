@@ -1,5 +1,5 @@
 Summary:	Plugins for the WordPress personal publishing system
-Summary(pl.UTF-8):   Wtyczki dla osobistego systemu publikacji WordPress
+Summary(pl.UTF-8):	Wtyczki dla osobistego systemu publikacji WordPress
 Name:		wordpress-plugins
 Version:	1.5
 Release:	3
@@ -45,7 +45,7 @@ wtyczki osobno.
 
 %package -n wordpress-plugin-khanhs_content_adder
 Summary:	Content Adder plugin for WordPress
-Summary(pl.UTF-8):   Wtyczka Content Adder dla WordPress
+Summary(pl.UTF-8):	Wtyczka Content Adder dla WordPress
 License:	MIT
 Group:		Applications/Publishing
 URL:		http://www.thoughtmechanics.com/
@@ -66,7 +66,7 @@ uaktywnić ją i używać.
 
 %package -n wordpress-plugin-excerpt_preview
 Summary:	Excerpt Preview plugin for WordPress
-Summary(pl.UTF-8):   Wtyczka Excerpt Preview dla WordPress
+Summary(pl.UTF-8):	Wtyczka Excerpt Preview dla WordPress
 License:	Free
 Group:		Applications/Publishing
 URL:		http://pericat.ca/unlock/
@@ -89,7 +89,7 @@ miniaturki.
 
 %package -n wordpress-plugin-next_to_last
 Summary:	Next-to-last plugin for WordPress
-Summary(pl.UTF-8):   Wtyczka następny-to-ostatniego dla WordPress
+Summary(pl.UTF-8):	Wtyczka następny-to-ostatniego dla WordPress
 License:	GPL
 Group:		Applications/Publishing
 URL:		http://thunkgeek.com/wordpress-plugins.php
@@ -110,7 +110,7 @@ wpisem. Wtyczka ta używa JavaScript.
 
 %package -n wordpress-plugin-paged_comment_editing
 Summary:	Paged Comment Editing plugin for WordPress
-Summary(pl.UTF-8):   Wtyczka Stronicowanej Edycji Komentarzy dla WordPress
+Summary(pl.UTF-8):	Wtyczka Stronicowanej Edycji Komentarzy dla WordPress
 License:	GPL
 Group:		Applications/Publishing
 URL:		http://www.coldforged.org/paged-comment-editing-plugin/
