@@ -14,7 +14,7 @@ Source2:	http://thunkgeek.com/files/next-to-last.zip
 Source3:	http://www.coldforged.org/paged_comment_editing.zip
 # Source3-md5:	86452bfd4369877f3faea8639e457326
 URL:		http://codex.wordpress.org/Plugins
-BuildRequires:	dos2unix
+BuildRequires:	rpm-build-macros >= 1.553
 Requires:	wordpress = %{version}
 Obsoletes:	wordpress-plugin
 BuildArch:	noarch
@@ -155,7 +155,7 @@ for i in *.phps
 do
     mv -f $i $(basename $i .phps).php
 done
-find . -type f -name '*.php' -o -name '*.txt' -o -name '*.htm*' -o -name '*.js' | xargs dos2unix
+find . -type f -name '*.php' -o -name '*.txt' -o -name '*.htm*' -o -name '*.js' | xargs %undos
 cp -R * $RPM_BUILD_ROOT%{pluginsdir}
 
 %clean
