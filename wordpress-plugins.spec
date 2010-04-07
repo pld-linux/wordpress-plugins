@@ -145,7 +145,6 @@ edytowane komentarze w celu rozszerzenia go o następujące możliwości:
 %package -n wordpress-plugin-feedwordpress
 Summary:	Atom/RSS aggregator for the WordPress
 Summary(pl.UTF-8):	Agregator Atom/RSS dla WordPress
-Version:	2009.0707
 License:	GPL
 Group:		Applications/Publishing
 URL:		http://feedwordpress.radgeek.com/
