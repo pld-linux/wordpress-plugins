@@ -206,7 +206,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n wordpress-plugin-paged_comment_editing
 %defattr(644,root,root,755)
-%verify(not md5 mtime size) %%attr(640,http,http) {pluginsdir}/edit-comments-full.php
+%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/edit-comments-full.php
 
 %files -n wordpress-plugin-feedwordpress
 %defattr(644,root,root,755)
