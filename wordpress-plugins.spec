@@ -1,8 +1,8 @@
 Summary:	Plugins for the WordPress personal publishing system
 Summary(pl.UTF-8):	Wtyczki dla osobistego systemu publikacji WordPress
 Name:		wordpress-plugins
-Version:	1.5
-Release:	3
+Version:	1.6
+Release:	1
 License:	GPL or MIT or Free
 Group:		Applications/Publishing
 Source0:	http://ink.bur.st/wp-content/downloads/kca.phps
@@ -13,6 +13,8 @@ Source2:	http://thunkgeek.com/files/next-to-last.zip
 # Source2-md5:	6c6812e81adc1cc7320a8d5674b7dfb4
 Source3:	http://www.coldforged.org/paged_comment_editing.zip
 # Source3-md5:	86452bfd4369877f3faea8639e457326
+Source4:	http://downloads.wordpress.org/plugin/feedwordpress.2010.0127.zip
+# Source4-md5:	d84349218f3f067030b5c148bc108ff1
 URL:		http://codex.wordpress.org/Plugins
 BuildRequires:	rpm-build-macros >= 1.553
 Requires:	wordpress = %{version}
@@ -123,8 +125,8 @@ This plugin overhauls the stock comment editing interface to provide
 the following capabilities:
 
 - paging through all of comments in the comment administration
-  interface, including arbitrary numbers of posts per page as well
-  as paging of comment searching
+  interface, including arbitrary numbers of posts per page as well as
+  paging of comment searching
 
 - viewing invisible comments (e.g. marked as invisible by filters)
 
@@ -140,12 +142,37 @@ edytowane komentarze w celu rozszerzenia go o następujące możliwości:
 - oglądanie niewidocznych komentarzy (np. zaznaczonych jako
   niewidoczne przez filtry)
 
+%package -n wordpress-plugin-feedwordpress
+Summary:	Atom/RSS aggregator for the WordPress
+Summary(pl.UTF-8):	Agregator Atom/RSS dla WordPress
+Version:	2009.0707
+License:	GPL
+Group:		Applications/Publishing
+URL:		http://feedwordpress.radgeek.com/
+# Requires wordpress with new MagpieRSS
+Requires:	wordpress >= 2.9.2-2
+Provides:	wordpress-plugin
+Obsoletes:	wordpress-plugins
+
+%description -n wordpress-plugin-feedwordpress
+FeedWordPress is an Atom/RSS aggregator for the WordPress weblog
+software. It syndicates content from feeds that you choose into your
+WordPress weblog; if you syndicate several feeds you can use
+WordPress's posts database and templating engine as the back-end of an
+aggregator (planet) website. It was originally developed because I
+needed a more flexible replacement for Planet to use at Feminist
+Blogs.
+
 %prep
 %setup -q -c -T
 cp %{SOURCE0} .
 tar xvzf %{SOURCE1}
 unzip -qq %{SOURCE2}
 unzip -qq %{SOURCE3}
+unzip -qq %{SOURCE4}
+
+# don't install these files. They are provided by wordpress package.
+rm -rf feedwordpress/MagpieRSS-upgrade
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -162,26 +189,27 @@ cp -R * $RPM_BUILD_ROOT%{pluginsdir}
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(640,root,http,750)
-%dir %{pluginsdir}
-%verify(not md5 mtime size) %{pluginsdir}/*
+%defattr(644,root,root,755)
+%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/*
 
 %files -n wordpress-plugin-khanhs_content_adder
-%defattr(644,root,http,750)
-%dir %{pluginsdir}
-%verify(not md5 mtime size) %{pluginsdir}/kca.php
+%defattr(644,root,root,755)
+%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/kca.php
 
 %files -n wordpress-plugin-excerpt_preview
-%defattr(644,root,http,750)
-%dir %{pluginsdir}
-%verify(not md5 mtime size) %{pluginsdir}/previewexcerpt.php
+%defattr(644,root,root,755)
+%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/previewexcerpt.php
 
 %files -n wordpress-plugin-next_to_last
-%defattr(644,root,http,750)
-%dir %{pluginsdir}
-%verify(not md5 mtime size) %{pluginsdir}/next-to-last.php
+%defattr(644,root,root,755)
+%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/next-to-last.php
 
 %files -n wordpress-plugin-paged_comment_editing
-%defattr(644,root,http,750)
-%dir %{pluginsdir}
-%verify(not md5 mtime size) %{pluginsdir}/edit-comments-full.php
+%defattr(644,root,root,755)
+%verify(not md5 mtime size) %%attr(640,http,http) {pluginsdir}/edit-comments-full.php
+
+%files -n wordpress-plugin-feedwordpress
+%defattr(644,root,root,755)
+%doc feedwordpress/readme.txt feedwordpress/ChangeLog.text
+%dir %attr(750,http,http) %{pluginsdir}/feedwordpress
+%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/feedwordpress/*.p??
