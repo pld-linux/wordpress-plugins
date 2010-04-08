@@ -1,3 +1,6 @@
+# TODO
+# - remove pointless restrictive permissions on open source files (use just
+#   default root,root world readable) these are not even config
 Summary:	Plugins for the WordPress personal publishing system
 Summary(pl.UTF-8):	Wtyczki dla osobistego systemu publikacji WordPress
 Name:		wordpress-plugins
@@ -14,6 +17,7 @@ Source2:	http://thunkgeek.com/files/next-to-last.zip
 Source3:	http://www.coldforged.org/paged_comment_editing.zip
 # Source3-md5:	86452bfd4369877f3faea8639e457326
 # WTF? Each time I download this file it has new md5sum? Is it generated "on the fly"?
+# TO: WTF: try fetching it and commit immediately then you and df get same hit from frontend cache
 # Source4:	http://downloads.wordpress.org/plugin/feedwordpress.2010.0127.zip
 Source4:	http://execve.pl/PLD/feedwordpress.2010.0127.zip
 # Source4-md5:	d84349218f3f067030b5c148bc108ff1
@@ -26,7 +30,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		wordpressdir	%{_datadir}/wordpress
 %define		pluginssubdir	wp-content/plugins
-%define		pluginsdir	%{wordpressdir}/%{pluginssubdir}
+%define		pluginsdir		%{wordpressdir}/%{pluginssubdir}
 
 %description
 WordPress is a state-of-the-art semantic personal publishing platform
@@ -165,8 +169,8 @@ needed a more flexible replacement for Planet to use at Feminist
 Blogs.
 
 %prep
-%setup -q -c -T
-cp %{SOURCE0} .
+%setup -qcT
+cp -a %{SOURCE0} .
 tar xvzf %{SOURCE1}
 unzip -qq %{SOURCE2}
 unzip -qq %{SOURCE3}
@@ -175,16 +179,16 @@ unzip -qq %{SOURCE4}
 # don't install these files. They are provided by wordpress package.
 rm -rf feedwordpress/MagpieRSS-upgrade
 
+find -type f -name '*.php' -o -name '*.txt' -o -name '*.htm*' -o -name '*.js' | xargs %undos
+
+for i in *.phps; do
+	mv -f $i $(basename $i .phps).php
+done
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{wordpressdir} $RPM_BUILD_ROOT%{pluginsdir}
-
-for i in *.phps
-do
-    mv -f $i $(basename $i .phps).php
-done
-find . -type f -name '*.php' -o -name '*.txt' -o -name '*.htm*' -o -name '*.js' | xargs %undos
-cp -R * $RPM_BUILD_ROOT%{pluginsdir}
+cp -a . $RPM_BUILD_ROOT%{pluginsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
