@@ -13,7 +13,9 @@ Source2:	http://thunkgeek.com/files/next-to-last.zip
 # Source2-md5:	6c6812e81adc1cc7320a8d5674b7dfb4
 Source3:	http://www.coldforged.org/paged_comment_editing.zip
 # Source3-md5:	86452bfd4369877f3faea8639e457326
-Source4:	http://downloads.wordpress.org/plugin/feedwordpress.2010.0127.zip
+# WTF? Each time I download this file it has new md5sum? Is it generated "on the fly"?
+# Source4:	http://downloads.wordpress.org/plugin/feedwordpress.2010.0127.zip
+Source4:	http://execve.pl/PLD/feedwordpress.2010.0127.zip
 # Source4-md5:	d84349218f3f067030b5c148bc108ff1
 URL:		http://codex.wordpress.org/Plugins
 BuildRequires:	rpm-build-macros >= 1.553
