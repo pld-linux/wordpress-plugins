@@ -189,26 +189,26 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/*
+%attr(640,http,http) %{pluginsdir}/*
 
 %files -n wordpress-plugin-khanhs_content_adder
 %defattr(644,root,root,755)
-%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/kca.php
+%attr(640,http,http) %{pluginsdir}/kca.php
 
 %files -n wordpress-plugin-excerpt_preview
 %defattr(644,root,root,755)
-%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/previewexcerpt.php
+%attr(640,http,http) %{pluginsdir}/previewexcerpt.php
 
 %files -n wordpress-plugin-next_to_last
 %defattr(644,root,root,755)
-%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/next-to-last.php
+%attr(640,http,http) %{pluginsdir}/next-to-last.php
 
 %files -n wordpress-plugin-paged_comment_editing
 %defattr(644,root,root,755)
-%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/edit-comments-full.php
+%attr(640,http,http) %{pluginsdir}/edit-comments-full.php
 
 %files -n wordpress-plugin-feedwordpress
 %defattr(644,root,root,755)
 %doc feedwordpress/readme.txt feedwordpress/ChangeLog.text
 %dir %attr(750,http,http) %{pluginsdir}/feedwordpress
-%verify(not md5 mtime size) %attr(640,http,http) %{pluginsdir}/feedwordpress/*.p??
+%attr(640,http,http) %{pluginsdir}/feedwordpress/*.p??
