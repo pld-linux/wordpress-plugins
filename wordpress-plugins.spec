@@ -23,6 +23,7 @@ Source4:	http://execve.pl/PLD/feedwordpress.2010.0127.zip
 # Source4-md5:	d84349218f3f067030b5c148bc108ff1
 URL:		http://codex.wordpress.org/Plugins
 BuildRequires:	rpm-build-macros >= 1.553
+BuildRequires:	unzip
 Requires:	wordpress = %{version}
 Obsoletes:	wordpress-plugin
 BuildArch:	noarch
